@@ -53,7 +53,7 @@ public class DataLoader implements ApplicationRunner {
         userRepository.save(admin);
 
         User neil = new User("Neil", "Ruthven", "neil@gmail.com", "password");
-        userRepository.save(admin);
+        userRepository.save(neil);
 
 		Experience exp1 = new Experience("Stirling", "Adventure", "Outdoors city of Scotland", 50, createDate("08-12-2018"));
 		expRepository.save(exp1);
@@ -78,7 +78,9 @@ public class DataLoader implements ApplicationRunner {
         userRepository.save(admin);
 
         neil.bookProp(prop1);
-        userRepository.save(admin);
+        neil.bookProp(prop2);
+        userRepository.save(neil);
+
     }
 
 

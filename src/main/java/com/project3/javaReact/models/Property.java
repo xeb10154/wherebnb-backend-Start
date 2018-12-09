@@ -3,6 +3,7 @@ package com.project3.javaReact.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javafx.util.Pair;
 import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.AbstractMap;
@@ -38,9 +39,13 @@ public class Property {
     @Column(name = "lat")
     private double lat;
 
-    @ElementCollection
-    @CollectionTable(name = "images", joinColumns = @JoinColumn(name = "property_id"))
-    @Column(name = "image_paths")
+//    @ElementCollection
+//    @CollectionTable(name = "images", joinColumns = @JoinColumn(name = "property_id"))
+//    @Column(name = "image_paths")
+//
+
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+    @OneToMany(mappedBy = "property", fetch = FetchType.LAZY)
     private List<String> images;
 
     @Id
