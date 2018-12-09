@@ -1,0 +1,14 @@
+package com.project3.javaReact.projections;
+
+import com.project3.javaReact.models.User;
+import org.springframework.data.rest.core.config.Projection;
+
+@Projection(name = "embedForUser", types = User.class)
+public interface EmbedForUser {
+
+    long getId();
+    String getFirstName();
+    String getLastName();
+    String getEmail();
+    String getPassword();
+}
