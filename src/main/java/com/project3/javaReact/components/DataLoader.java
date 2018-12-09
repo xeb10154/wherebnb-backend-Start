@@ -1,8 +1,10 @@
 package com.project3.javaReact.components;
 
 import com.project3.javaReact.models.Experience;
+import com.project3.javaReact.models.Property;
 import com.project3.javaReact.models.User;
 import com.project3.javaReact.repositories.experiences.ExpRepository;
+import com.project3.javaReact.repositories.properties.PropRepository;
 import com.project3.javaReact.repositories.users.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -23,8 +25,11 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    PropRepository propRepository;
 
-    DateFormat dateFormatter = new SimpleDateFormat("dd-MM-yy");
+
+    DateFormat dateFormatter = new SimpleDateFormat("HH-mm-ss");
 
 
     public DataLoader() {
@@ -47,6 +52,9 @@ public class DataLoader implements ApplicationRunner {
         User admin = new User("Raymond", "Yau", "admin@wherebnb.com", "password");
         userRepository.save(admin);
 
+        User neil = new User("Neil", "Ruthven", "neil@gmail.com", "password");
+        userRepository.save(admin);
+
 		Experience exp1 = new Experience("Stirling", "Adventure", "Outdoors city of Scotland", 50, createDate("08-12-2018"));
 		expRepository.save(exp1);
 
@@ -56,7 +64,21 @@ public class DataLoader implements ApplicationRunner {
         Experience exp3 = new Experience("Edinburgh", "Music", "Listen to the sound", 25, createDate("15-09-2018"));
         expRepository.save(exp3);
 
+        Property prop1 = new Property(2, 80, "Apartment", 4.5, 55.946976, -4.753461 );
+        prop1.addImage("local/path/to/image1");
+        prop1.addImage("local/path/to/image2");
+        propRepository.save(prop1);
 
+        Property prop2 = new Property(2, 80, "House", 4.5, 55.946976, -4.753461 );
+        prop2.addImage("local/path/to/image1");
+        prop2.addImage("local/path/to/image2");
+        propRepository.save(prop2);
+
+        admin.bookProp(prop1);
+        userRepository.save(admin);
+
+        neil.bookProp(prop1);
+        userRepository.save(admin);
     }
 
 
