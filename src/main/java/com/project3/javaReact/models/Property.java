@@ -51,7 +51,7 @@ public class Property {
     @Column(name = "rooms")
     private int rooms;
 
-    @Column(name = "Details")
+    @Column(name = "Details", length = 512)
     private String details;
 
     @ElementCollection
@@ -73,11 +73,12 @@ public class Property {
     )
     private List<User> users;
 
-    public Property(String name, int beds, double price, String type, double rating, int rooms, String location, double lon, double lat, int maxGuests) {
+    public Property(String location, String type, String name, int maxGuests, int rooms, int beds, String details, double price, double rating, double lon, double lat) {
         this.name = name;
         this.beds = beds;
         this.price = price;
         this.type = type;
+        this.details = details;
         this.rating = rating;
         this.rooms = rooms;
         this.location = location;

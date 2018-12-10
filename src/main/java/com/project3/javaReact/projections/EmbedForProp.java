@@ -9,6 +9,8 @@ import java.util.ArrayList;
 @Projection(name = "embedForProp", types = Property.class)
 public interface EmbedForProp {
 
+    String getLocation();
+    String getName();
     long getId();
     int getBeds();
     double getprice();
