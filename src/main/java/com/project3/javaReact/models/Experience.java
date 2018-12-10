@@ -7,6 +7,9 @@ import java.util.Date;
 @Table(name = "experiences")
 public class Experience{
 
+    @Column(name = "title")
+    private String title;
+
     @Column(name = "location")
     private String location;
 
@@ -26,7 +29,8 @@ public class Experience{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    public Experience(String location, String category, String description, double price, Date date) {
+    public Experience(String title, String location, String category, String description, double price, Date date) {
+        this.title = title;
         this.location = location;
         this.category = category;
         this.description = description;
@@ -85,5 +89,11 @@ public class Experience{
         Id = id;
     }
 
+    public String getTitle() {
+        return title;
+    }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }

@@ -21,6 +21,9 @@ public class Property {
 //
 //    Will look into the lon lat soon, currently lon and lat variables are independently set.
 
+    @Column(name = "name")
+    private String name;
+
     @Column(name = "beds")
     private int beds;
 
@@ -33,19 +36,27 @@ public class Property {
     @Column(name = "rating")
     private double rating;
 
+    @Column(name = "location")
+    private String location;
+
     @Column(name = "lon")
     private double lon;
 
     @Column(name = "lat")
     private double lat;
 
-//    @ElementCollection
-//    @CollectionTable(name = "images", joinColumns = @JoinColumn(name = "property_id"))
-//    @Column(name = "image_paths")
-//
+    @Column(name = "max_guests")
+    private int maxGuests;
 
-    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
-    @OneToMany(mappedBy = "property", fetch = FetchType.LAZY)
+    @Column(name = "rooms")
+    private int rooms;
+
+    @Column(name = "Details")
+    private String details;
+
+    @ElementCollection
+    @CollectionTable(name = "images", joinColumns = @JoinColumn(name = "property_id"))
+    @Column(name = "image_paths")
     private List<String> images;
 
     @Id
@@ -62,15 +73,19 @@ public class Property {
     )
     private List<User> users;
 
-    public Property(int beds, double price, String type, double rating, double lon, double lat) {
+    public Property(String name, int beds, double price, String type, double rating, int rooms, String location, double lon, double lat, int maxGuests) {
+        this.name = name;
         this.beds = beds;
         this.price = price;
         this.type = type;
         this.rating = rating;
+        this.rooms = rooms;
+        this.location = location;
         this.lon = lon;
         this.lat = lat;
         this.images = new ArrayList<String>();
         this.users = new ArrayList<User>();
+        this.maxGuests = maxGuests;
     }
 
     public Property() {
@@ -150,5 +165,37 @@ public class Property {
 
     public void addImage(String imagePath) {
         this.images.add(imagePath);
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getMaxGuests() {
+        return maxGuests;
+    }
+
+    public void setMaxGuests(int maxGuests) {
+        this.maxGuests = maxGuests;
+    }
+
+    public int getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(int rooms) {
+        this.rooms = rooms;
     }
 }
