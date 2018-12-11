@@ -20,6 +20,7 @@ public interface EmbedForProp {
     double getLon();
     double getLat();
     ArrayList<String> getImages();
-    ArrayList<Booking> getBookings();
+    ArrayList<Booking> getUsers();
     String getDetails();
+
 }

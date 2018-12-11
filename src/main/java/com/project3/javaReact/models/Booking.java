@@ -46,6 +46,10 @@ public class Booking {
         return property;
     }
 
+    public long getPropertyId() {
+        return property.getId();
+    }
+
     public void setProperty(Property property) {
         this.property = property;
     }
@@ -53,6 +57,11 @@ public class Booking {
     public User getUser() {
         return user;
     }
+
+    public long getUserId() {
+        return user.getId();
+    }
+
 
     public void setUser(User user) {
         this.user = user;

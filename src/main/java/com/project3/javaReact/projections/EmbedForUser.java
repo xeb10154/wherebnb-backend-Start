@@ -1,5 +1,6 @@
 package com.project3.javaReact.projections;
 
+import com.project3.javaReact.models.Booking;
 import com.project3.javaReact.models.Property;
 import com.project3.javaReact.models.User;
 import org.springframework.data.rest.core.config.Projection;
@@ -14,5 +15,5 @@ public interface EmbedForUser {
     String getLastName();
     String getEmail();
     String getPassword();
-    ArrayList<Property> getBookings();
+    ArrayList<Booking> getProperties();
 }

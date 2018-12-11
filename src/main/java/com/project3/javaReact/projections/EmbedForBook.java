@@ -1,6 +1,8 @@
 package com.project3.javaReact.projections;
 
 import com.project3.javaReact.models.Booking;
+import com.project3.javaReact.models.Property;
+import com.project3.javaReact.models.User;
 import org.springframework.data.rest.core.config.Projection;
 
 import java.util.Date;

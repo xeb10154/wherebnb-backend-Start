@@ -34,7 +34,7 @@ public class DataLoader implements ApplicationRunner {
     PropRepository propRepository;
 
 
-    DateFormat dateFormatter = new SimpleDateFormat("HH-mm-ss");
+    DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
 
 
     public DataLoader() {
@@ -276,8 +276,38 @@ public class DataLoader implements ApplicationRunner {
       userRepository.save(neil);
 
       Booking book1 = new Booking(prop1, neil, createDate("2018-02-01"), createDate("2018-02-05"));
-
+      Booking book2 = new Booking(prop1, admin, createDate("2018-02-07"), createDate("2018-02-28"));
       bookRepository.save(book1);
+      bookRepository.save(book2);
+
+        Booking book3 = new Booking(prop2, neil, createDate("2018-02-01"), createDate("2018-02-05"));
+        Booking book4 = new Booking(prop2, admin, createDate("2018-02-07"), createDate("2018-02-28"));
+        bookRepository.save(book3);
+        bookRepository.save(book4);
+
+        Booking book5 = new Booking(prop3, neil, createDate("2018-02-01"), createDate("2018-02-05"));
+        Booking book6 = new Booking(prop3, admin, createDate("2018-02-07"), createDate("2018-02-28"));
+        bookRepository.save(book5);
+        bookRepository.save(book6);
+
+        Booking book7 = new Booking(prop4, neil, createDate("2018-02-01"), createDate("2018-02-05"));
+        bookRepository.save(book7);
+
+        Booking book8 = new Booking(prop5, neil, createDate("2018-02-01"), createDate("2018-02-05"));
+        Booking book9 = new Booking(prop5, admin, createDate("2018-02-07"), createDate("2018-02-28"));
+        bookRepository.save(book8);
+        bookRepository.save(book9);
+
+        Booking book10 = new Booking(prop6, neil, createDate("2018-02-01"), createDate("2018-02-05"));
+        Booking book11 = new Booking(prop6, admin, createDate("2018-02-07"), createDate("2018-02-28"));
+        bookRepository.save(book10);
+        bookRepository.save(book11);
+
+        Booking book12 = new Booking(prop8, neil, createDate("2018-02-01"), createDate("2018-02-05"));
+        Booking book13 = new Booking(prop9, admin, createDate("2018-02-07"), createDate("2018-02-28"));
+        bookRepository.save(book12);
+        bookRepository.save(book13);
+
 
     }
 
