@@ -233,6 +233,35 @@ public class DataLoader implements ApplicationRunner {
 
         propRepository.save(prop8);
 
+        Property prop9 = new Property("Rio",
+                "Entire Loft",
+                "The Cozy Studio Midtown Manhattan",
+                5,
+                1,
+                3,
+                "Este maravilloso apartamento se encuentra en una localización inmejorable en Nueva York! Situado entre la 5a Avenida y Broadway Avenue con la 34th Street en el pleno corazón de Midtown Manhattan, a tan solo una manzana del Empire State Building y a 5 minutos caminando de Times Square, vivirás la experiencia de estar en el centro de la ciudad:",
+                107,
+                3,
+                55.946976,
+                -4.753461);
+        prop9.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F8%2Fnyc36.jpg?alt=media&token=c80531b9-bc94-4cbc-b1b9-01265090aef3");
+        propRepository.save(prop9);
+
+        Property prop10 = new Property("Rio",
+                "Entire Loft",
+                "The Cozy Studio Midtown Manhattan",
+                5,
+                1,
+                3,
+                "Este maravilloso apartamento se encuentra en una localización inmejorable en Nueva York! Situado entre la 5a Avenida y Broadway Avenue con la 34th Street en el pleno corazón de Midtown Manhattan, a tan solo una manzana del Empire State Building y a 5 minutos caminando de Times Square, vivirás la experiencia de estar en el centro de la ciudad:",
+                107,
+                3,
+                55.946976,
+                -4.753461);
+        prop10.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F8%2Fnyc36.jpg?alt=media&token=c80531b9-bc94-4cbc-b1b9-01265090aef3");
+        propRepository.save(prop10);
+
+
 
 //        admin.bookProp(prop1);
 //        userRepository.save(admin);

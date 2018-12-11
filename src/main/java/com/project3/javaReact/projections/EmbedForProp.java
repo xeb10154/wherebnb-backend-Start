@@ -20,4 +20,5 @@ public interface EmbedForProp {
     double getLat();
     ArrayList<String> getImages();
     ArrayList<User> getUsers();
+    String getDetails();
 }
