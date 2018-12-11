@@ -14,9 +14,6 @@ import java.util.List;
 @Table(name = "users")
 public class User {
 
-    @Autowired
-    BookRepository bookRepository;
-
     @Column(name = "firstName")
     private String firstName;
 
@@ -33,21 +30,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @Column(name="property")
-    private List<Property> properties;
-
-    @JsonIgnoreProperties("users")
-    @ManyToOne
-    @JoinColumn(name = "booking_id", nullable = false)
-    private List<Booking> bookings;
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Booking> properties;
 
     public User(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.bookings = new ArrayList<Booking>();
-        this.properties = new ArrayList<Property>();
+        this.properties = new ArrayList<Booking>();
     }
 
     public User() {
@@ -93,28 +85,11 @@ public class User {
         Id = id;
     }
 
-    public List<Booking> getBookings() {
-        return bookings;
-    }
-
-    public void setBookings(List<Booking> bookings) {
-        this.bookings = bookings;
-    }
-
-    public void bookProp(Property prop1) {
-        this.properties.add(prop1);
-    }
-
-    public List<Property> getProperties() {
+    public List<Booking> getProperties() {
         return properties;
     }
 
-    public void setProperties(List<Property> properties) {
+    public void setProperties(List<Booking> properties) {
         this.properties = properties;
-    }
-
-    public void createBooking(long user, long prop, Date startDate, Date endDate){
-        Booking booking = new Booking(user, prop, startDate, endDate);
-        bookRepository.save(booking);
     }
 }

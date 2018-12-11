@@ -1,8 +1,10 @@
 package com.project3.javaReact.components;
 
+import com.project3.javaReact.models.Booking;
 import com.project3.javaReact.models.Experience;
 import com.project3.javaReact.models.Property;
 import com.project3.javaReact.models.User;
+import com.project3.javaReact.repositories.bookings.BookRepository;
 import com.project3.javaReact.repositories.experiences.ExpRepository;
 import com.project3.javaReact.repositories.properties.PropRepository;
 import com.project3.javaReact.repositories.users.UserRepository;
@@ -18,6 +20,9 @@ import java.util.Date;
 
 @Component
 public class DataLoader implements ApplicationRunner {
+
+    @Autowired
+    BookRepository bookRepository;
 
     @Autowired
     ExpRepository expRepository;
@@ -268,9 +273,11 @@ public class DataLoader implements ApplicationRunner {
 //
 //        neil.bookProp(prop1);
 //        neil.bookProp(prop2);
-
-        neil.createBooking(neil.getId(), prop10.getId(), createDate("2018-09-01"), createDate("2018-09-10"));
       userRepository.save(neil);
+
+      Booking book1 = new Booking(prop1, neil, createDate("2018-02-01"), createDate("2018-02-05"));
+
+      bookRepository.save(book1);
 
     }
 

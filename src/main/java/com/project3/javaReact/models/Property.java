@@ -63,10 +63,10 @@ public class Property {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @JsonIgnoreProperties("properties")
-    @ManyToOne
-    @JoinColumn(name = "booking_id", nullable = false)
-    private List<Booking> bookings;
+
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+    @OneToMany(mappedBy = "property", fetch = FetchType.LAZY)
+    private List<Booking> users;
 
     public Property(String location, String type, String name, int maxGuests, int rooms, int beds, String details, double price, double rating, double lon, double lat) {
         this.name = name;
@@ -80,12 +80,21 @@ public class Property {
         this.lon = lon;
         this.lat = lat;
         this.images = new ArrayList<String>();
-        this.bookings = new ArrayList<Booking>();
+        this.users = new ArrayList<Booking>();
         this.maxGuests = maxGuests;
+        this.images = new ArrayList<>();
 
     }
 
     public Property() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getBeds() {
@@ -120,6 +129,14 @@ public class Property {
         this.rating = rating;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     public double getLon() {
         return lon;
     }
@@ -134,50 +151,6 @@ public class Property {
 
     public void setLat(double lat) {
         this.lat = lat;
-    }
-
-    public List<String> getImages() {
-        return images;
-    }
-
-    public void setImages(List<String> images) {
-        this.images = images;
-    }
-
-    public Long getId() {
-        return Id;
-    }
-
-    public void setId(Long id) {
-        Id = id;
-    }
-
-    public List<Booking> getBookings() {
-        return bookings;
-    }
-
-    public void setBookings(List<Booking> bookings) {
-        this.bookings = bookings;
-    }
-
-    public void addImage(String imagePath) {
-        this.images.add(imagePath);
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getMaxGuests() {
@@ -203,4 +176,34 @@ public class Property {
     public void setDetails(String details) {
         this.details = details;
     }
+
+    public List<String> getImages() {
+        return images;
+    }
+
+    public void setImages(List<String> images) {
+        this.images = images;
+    }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
+    }
+
+    public List<Booking> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<Booking> users) {
+        this.users = users;
+    }
+
+    public void addImage(String imagePath) {
+        this.images.add(imagePath);
+    }
+
+
 }

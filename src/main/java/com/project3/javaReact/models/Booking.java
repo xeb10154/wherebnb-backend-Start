@@ -12,12 +12,13 @@ import java.util.Date;
 @Table(name = "bookings")
 public class Booking {
 
-    @Cascade(CascadeType.DELETE)
-    @OneToMany(mappedBy = "booking", fetch = FetchType.LAZY)
+
+    @ManyToOne
+    @JoinColumn(name = "property_id", nullable = false)
     private Property property;
 
-    @Cascade(CascadeType.DELETE)
-    @OneToMany(mappedBy = "booking", fetch = FetchType.LAZY)
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Column(name = "start_date")
@@ -41,20 +42,20 @@ public class Booking {
     public Booking() {
     }
 
-    public long getPropertyId() {
-        return propertyId;
+    public Property getProperty() {
+        return property;
     }
 
-    public void setPropertyId(long propertyId) {
-        this.propertyId = propertyId;
+    public void setProperty(Property property) {
+        this.property = property;
     }
 
-    public long getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Date getStartDate() {
@@ -80,4 +81,5 @@ public class Booking {
     public void setId(Long id) {
         Id = id;
     }
+
 }
