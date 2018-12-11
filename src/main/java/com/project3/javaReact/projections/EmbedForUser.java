@@ -14,5 +14,5 @@ public interface EmbedForUser {
     String getLastName();
     String getEmail();
     String getPassword();
-    ArrayList<Property> getProperties();
+    ArrayList<Property> getBookings();
 }

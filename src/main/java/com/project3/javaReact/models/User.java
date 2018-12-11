@@ -1,15 +1,21 @@
 package com.project3.javaReact.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.project3.javaReact.repositories.bookings.BookRepository;
 import org.hibernate.annotations.Cascade;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "users")
 public class User {
+
+    @Autowired
+    BookRepository bookRepository;
 
     @Column(name = "firstName")
     private String firstName;
@@ -27,20 +33,20 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @JsonIgnoreProperties("users")
-    @ManyToMany
-    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
-    @JoinTable(
-            joinColumns = {@JoinColumn(name = "user_id", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name = "properties_id", nullable = false, updatable = false)}
-    )
+    @Column(name="property")
     private List<Property> properties;
+
+    @JsonIgnoreProperties("users")
+    @ManyToOne
+    @JoinColumn(name = "booking_id", nullable = false)
+    private List<Booking> bookings;
 
     public User(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.bookings = new ArrayList<Booking>();
         this.properties = new ArrayList<Property>();
     }
 
@@ -87,6 +93,18 @@ public class User {
         Id = id;
     }
 
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public void bookProp(Property prop1) {
+        this.properties.add(prop1);
+    }
+
     public List<Property> getProperties() {
         return properties;
     }
@@ -95,11 +113,8 @@ public class User {
         this.properties = properties;
     }
 
-    public void bookProp(Property prop1) {
-        this.properties.add(prop1);
+    public void createBooking(long user, long prop, Date startDate, Date endDate){
+        Booking booking = new Booking(user, prop, startDate, endDate);
+        bookRepository.save(booking);
     }
-
-
-
-
 }

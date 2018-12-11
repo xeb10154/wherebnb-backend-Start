@@ -266,8 +266,10 @@ public class DataLoader implements ApplicationRunner {
 //        admin.bookProp(prop1);
 //        userRepository.save(admin);
 //
-        neil.bookProp(prop1);
-        neil.bookProp(prop2);
+//        neil.bookProp(prop1);
+//        neil.bookProp(prop2);
+
+        neil.createBooking(neil.getId(), prop10.getId(), createDate("2018-09-01"), createDate("2018-09-10"));
       userRepository.save(neil);
 
     }

@@ -64,14 +64,9 @@ public class Property {
     private Long Id;
 
     @JsonIgnoreProperties("properties")
-    @ManyToMany
-    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
-    @JoinTable(
-            name = "bookings",
-            joinColumns = {@JoinColumn(name = "properties_id", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name = "user_id", nullable = false, updatable = false)}
-    )
-    private List<User> users;
+    @ManyToOne
+    @JoinColumn(name = "booking_id", nullable = false)
+    private List<Booking> bookings;
 
     public Property(String location, String type, String name, int maxGuests, int rooms, int beds, String details, double price, double rating, double lon, double lat) {
         this.name = name;
@@ -85,8 +80,9 @@ public class Property {
         this.lon = lon;
         this.lat = lat;
         this.images = new ArrayList<String>();
-        this.users = new ArrayList<User>();
+        this.bookings = new ArrayList<Booking>();
         this.maxGuests = maxGuests;
+
     }
 
     public Property() {
@@ -156,12 +152,12 @@ public class Property {
         Id = id;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public List<Booking> getBookings() {
+        return bookings;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
     }
 
     public void addImage(String imagePath) {
