@@ -298,13 +298,13 @@ public class DataLoader implements ApplicationRunner {
         bookRepository.save(book8);
         bookRepository.save(book9);
 
-        Booking book10 = new Booking(prop6, neil, createDate("2018-02-01"), createDate("2018-02-05"));
-        Booking book11 = new Booking(prop6, admin, createDate("2018-02-07"), createDate("2018-02-28"));
+        Booking book10 = new Booking(prop7, neil, createDate("2018-12-01"), createDate("2018-12-25"));
+        Booking book11 = new Booking(prop7, admin, createDate("2018-12-01"), createDate("2018-12-25"));
         bookRepository.save(book10);
         bookRepository.save(book11);
 
-        Booking book12 = new Booking(prop8, neil, createDate("2018-02-01"), createDate("2018-02-05"));
-        Booking book13 = new Booking(prop9, admin, createDate("2018-02-07"), createDate("2018-02-28"));
+        Booking book12 = new Booking(prop8, neil, createDate("2018-12-01"), createDate("2018-12-29"));
+        Booking book13 = new Booking(prop9, admin, createDate("2018-12-01"), createDate("2018-12-29"));
         bookRepository.save(book12);
         bookRepository.save(book13);
 
