@@ -22,20 +22,20 @@ public class Experience{
     @Column(name = "price")
     private double price;
 
-    @Column(name = "date")
-    private Date date;
+    @Column(name = "image")
+    private String image;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    public Experience(String title, String location, String category, String description, double price, Date date) {
+    public Experience(String title, String location, String category, String description, double price, String image) {
         this.title = title;
         this.location = location;
         this.category = category;
         this.description = description;
         this.price = price;
-        this.date = date;
+        this.image = image;
     }
 
     public Experience() {
@@ -73,12 +73,12 @@ public class Experience{
         this.price = price;
     }
 
-    public Date getDate() {
-        return date;
+    public String getImage() {
+        return image;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Long getId() {

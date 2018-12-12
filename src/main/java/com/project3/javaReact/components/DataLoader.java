@@ -60,14 +60,29 @@ public class DataLoader implements ApplicationRunner {
         User neil = new User("Neil", "Ruthven", "neil@gmail.com", "password");
         userRepository.save(neil);
 
-//		Experience exp1 = new Experience("Stirling", "Adventure", "Outdoors city of Scotland", 50, createDate("08-12-2018"));
-//		expRepository.save(exp1);
-//
-//        Experience exp2 = new Experience("Glasgow", "Exhibitions", "Museums of Scotland", 8, createDate("01-05-2018"));
-//        expRepository.save(exp2);
-//
-//        Experience exp3 = new Experience("Edinburgh", "Music", "Listen to the sound", 25, createDate("15-09-2018"));
-//        expRepository.save(exp3);
+        Experience exp1 = new Experience("The Empire State Building", "New York City", "Landmark", "Look out on New York City from 1,050 feet above the bustling streets below",30, "https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2FEXPERIENCES%2Fphoto-1508094214466-708a7d21c5c0.jpeg?alt=media&token=041cbc1d-a7a4-4a58-8884-515bc9173fbd");
+        expRepository.save(exp1);
+
+        Experience exp2 = new Experience("Keens Steakhouse", "New York City", "Food & Drink", "Experience one of New York Citys world famous steakhouses, with the finest meats, wine and atomspheres. ",80, "https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2FEXPERIENCES%2FKeens_0.jpg?alt=media&token=af39f519-46bc-445f-b9b2-36cc18bb68c3");
+        expRepository.save(exp2);
+
+        Experience exp3 = new Experience("Broadway Musical", "New York City", "Entertainment", "With 41 theatres, Broadway is full of everything from world renowned spectaculars to 1 man shows. NYC has it all.",50, "https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2FEXPERIENCES%2Fphoto-1504913659239-6abc87875a63.jpeg?alt=media&token=842ab639-a0d1-4f4f-91f1-07e155b13de6");
+        expRepository.save(exp3);
+
+        Experience exp4 = new Experience("Central Park", "New York City", "Landmark", "Nested in the heart of the city that never sleeps is a little rest bite. Central park is the perfect escape. ",0, "https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2FEXPERIENCES%2Fphoto-1459508583695-86e229e8855a.jpeg?alt=media&token=81fcdc69-26ee-4a57-8350-a423f0b8873c");
+        expRepository.save(exp4);
+
+        Experience exp5 = new Experience("The Brooklyn Bridge", "New York City", "Landmark", "Beloved, circa-1883 landmark connecting Manhattan & Brooklyn via a unique stone-&-steel design.",0, "https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2FEXPERIENCES%2Fphoto-1479779978657-f97923f70d04.jpeg?alt=media&token=c4ac948b-cb44-4453-903f-96b9dec224a6");
+        expRepository.save(exp5);
+
+        Experience exp6 = new Experience("Grand Central Train Station", "New York City", "Landmark", "Iconic train station known for its grand facade & main concourse, also offering shops & dining.",0, "https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2FEXPERIENCES%2Fphoto-1501503125584-bb1da5f56d48.jpeg?alt=media&token=cb4e2d18-2ab9-4c3f-8470-ac6e6deef0c0");
+        expRepository.save(exp6);
+
+        Experience exp7 = new Experience("The Statue of Liberty", "New York City", "Landmark", "Iconic National Monument opened in 1886, offering guided tours, a museum & city views.",20, "https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2FEXPERIENCES%2Fphoto-1445023086979-7244a12345a8.jpeg?alt=media&token=63c4a6ee-92d8-443a-a51a-7f38787f6d3a");
+        expRepository.save(exp7);
+
+        Experience exp8 = new Experience("Metropolitan museum of art", "New York City", "Arts & Culture", "A grand setting for one of the world's greatest collections of art, from ancient to contemporary.",20, "https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2FEXPERIENCES%2Fphoto-1499426600726-a950358acf16.jpeg?alt=media&token=1fd54236-5762-4d26-90e4-b63fbd7d9fb6");
+        expRepository.save(exp8);
 
 
         Property prop1 = new Property("New York City",
@@ -83,9 +98,10 @@ public class DataLoader implements ApplicationRunner {
                 -4.753461);
 
         prop1.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F1%2Fnyc1.jpg?alt=media&token=c737d9ea-3aab-4d0b-b5f5-506de1cba423");
-        prop1.addImage("lhttps://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F1%2Fnyc2.jpg?alt=media&token=e606be43-56db-4d94-a3b2-b1a2ce2ec3b1");
+        prop1.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F1%2Fnyc2.jpg?alt=media&token=e606be43-56db-4d94-a3b2-b1a2ce2ec3b1");
         prop1.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F1%2Fnyc4.jpg?alt=media&token=33255ab0-f487-4448-b1ff-3b4d6f7dbf5a");
         prop1.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F1%2Fnyc5.jpg?alt=media&token=810ba153-ef51-42c0-bd2e-85424d8ab908");
+        prop1.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F1%2Fnyc2.jpg?alt=media&token=e606be43-56db-4d94-a3b2-b1a2ce2ec3b1");
         propRepository.save(prop1);
 
 
@@ -98,8 +114,8 @@ public class DataLoader implements ApplicationRunner {
                 "This apartment is located in the 6th floor with elevator. From the window you can see all 31th St. The aprtment was just renovated on summer 2018. It has place for 4 people but the ideal is for 3 people. There is TV, WIFI and NEtFlix. I try to put all the necesary staff to cook and have a cozy stay. There is hearldSquare subway stops just crossing the street.",
                 90,
                 4,
-                55.946976,
-                -4.753461);
+                -73.988940,
+                40.741316);
 
         prop2.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F2%2Fnyc6.jpeg?alt=media&token=d5c2ebfb-a71f-423c-a340-dfedd224ae0d");
         prop2.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F2%2Fnyc7.jpg?alt=media&token=c2329b7a-5c00-4258-be02-856f8e8e5b43");
@@ -120,8 +136,8 @@ public class DataLoader implements ApplicationRunner {
                 "Celebrate Christmas in New York and Watch the Ball Drop and mark a spectacular NYE in Times Square! Just a 2 min walk! Live the urban NYC Lifestyle in this modern Apartment and make Manhattan to your Backyard.You will right away fit in and feel the vibrance of the City that never sleeps.You are in the middle of the Cake: TimesSquare,PennStation,Madison Square Garden,all Subway-lines, Broadway shows,Central Park, to name a few,are all walking distance. Looking for convenience?Well look no more!",
                 118,
                 4,
-                55.946976,
-                -4.753461);
+                -73.988940,
+                40.741316);
 
         prop3.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F3%2Fnyc11.jpg?alt=media&token=3368a5ad-b71a-41cc-9124-b1cddcef92fd");
         prop3.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F3%2Fnyc12.jpg?alt=media&token=57a9d5f3-a773-40b3-a3fd-26f46756fe1c");
@@ -141,8 +157,8 @@ public class DataLoader implements ApplicationRunner {
                 "Recently renewed, modern, spacious attic apartment, private entrance, kitchenette with fridge, microwave, coffee maker and toaster perfect to prepare breakfast, an afternoon snack or reheat delivery food; 2 bedrooms with total 3 beds. Living room with TV ( cable channels & Netflix included), wifi ,PS3 and other amenities. Perfect for 4 adults or 2 adults and upto 3 kids.",
                 57,
                 4,
-                55.946976,
-                -4.753461);
+                -73.988940,
+                40.741316);
 
         prop4.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F4%2Fnyc16.jpg?alt=media&token=9311788b-8d25-4802-9859-8d02f558ac78");
         prop4.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F4%2Fnyc17.jpg?alt=media&token=4e616f1e-bb98-46e1-96f1-7a521f98b8da");
@@ -163,8 +179,8 @@ public class DataLoader implements ApplicationRunner {
                 "A beautiful quaint one bedroom plus terrace in the heart of the Upper West Side! By Central Park, Riverside Park, Lincoln Square, Metropolitan Opera, Columbus Circle, and one stop from Times Square! Near Manhattan's cafes, restaurants and shops!",
                 79,
                 4,
-                55.946976,
-                -4.753461);
+                -73.988940,
+                40.741316);
 
         prop5.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F5%2Fnyc21.jpg?alt=media&token=f0a53b07-fafe-44b3-9c6e-5317dd359e24");
         prop5.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F5%2Fnyc22.jpg?alt=media&token=b421a85d-b40d-486b-9142-2fca483743a4");
@@ -185,8 +201,8 @@ public class DataLoader implements ApplicationRunner {
                 "Modern industrial style apartment in Jersey City with brand new designer hardwood furnitures. 1 min walk to Grove Street PATH, minutes away from Manhattan by PATH subway: World Trade Centre - 10 min West Village - 10 min Midtown (33 St & 6 Ave) - 20 min",
                 59,
                 3.8,
-                55.946976,
-                -4.753461);
+                -73.988940,
+                40.741316);
 
         prop6.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F6%2Fnyc26.jpg?alt=media&token=df09abca-993e-41cf-8f50-88558db3d510");
         prop6.addImage("https://firebasestorage.googleapis.com/v0/b/wherebnb-53946.appspot.com/o/NYC%2F6%2Fnyc27.jpg?alt=media&token=939c8c29-1275-4e45-9481-f9906883b0f3");
@@ -310,6 +326,8 @@ public class DataLoader implements ApplicationRunner {
 
 
     }
+
+
 
 
 

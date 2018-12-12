@@ -13,6 +13,8 @@ public interface EmbedForProp {
     String getLocation();
     String getName();
     long getId();
+    int getRooms();
+    int getMaxGuests();
     int getBeds();
     double getprice();
     String getType();

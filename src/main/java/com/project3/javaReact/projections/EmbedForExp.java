@@ -9,10 +9,11 @@ import java.util.Date;
 public interface EmbedForExp {
 
         long getId();
+        String getTitle();
         String getLocation();
         String getCategory();
         String getDescription();
         Double getPrice();
-        Date getDate();
+        String getImage();
 
 }
